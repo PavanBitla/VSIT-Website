@@ -1,30 +1,27 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import '../styles/components/navbar.css';
+import "../styles/components/navbar.css";
 
 const Navbar = () => {
-  const [isRegistrationDropdownOpen, setIsRegistrationDropdownOpen] = useState(false);
-  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
+  const [hoveredDropdown, setHoveredDropdown] = useState(null); // Tracks the currently hovered dropdown
   const [activeInnerDropdown, setActiveInnerDropdown] = useState(null);
-  const [isGuidelinesDropdownOpen, setIsGuidelinesDropdownOpen] = useState(false);
 
-  let timeout;
+  let hoverTimeout;
 
-  const handleMouseEnter = (setDropdown) => {
-    clearTimeout(timeout);
-    setDropdown(true);
+  const handleMouseEnter = (dropdownName) => {
+    clearTimeout(hoverTimeout); // Cancel any hiding timeout
+    setHoveredDropdown(dropdownName); // Set the currently hovered dropdown
   };
 
-  const handleMouseLeave = (setDropdown) => {
-    timeout = setTimeout(() => {
-      setDropdown(false);
-      setActiveInnerDropdown(null);
-      setIsGuidelinesDropdownOpen(false);
-    }, 200);
+  const handleMouseLeave = () => {
+    hoverTimeout = setTimeout(() => {
+      setHoveredDropdown(null); // Hide the dropdown after a short delay
+      setActiveInnerDropdown(null); // Reset any active inner dropdowns
+    }, 200); // Delay to make the transition smoother
   };
 
   const toggleInnerDropdown = (dropdownName) => {
-    setActiveInnerDropdown((prev) => prev === dropdownName ? null : dropdownName);
+    setActiveInnerDropdown((prev) => (prev === dropdownName ? null : dropdownName));
   };
 
   return (
@@ -35,13 +32,14 @@ const Navbar = () => {
         <Link to="/about-conference" className="nav-link">About Conference</Link>
         <Link to="/call-for-papers" className="nav-link">Call for Papers</Link>
 
+        {/* Registration Dropdown */}
         <div
           className="dropdown-container"
-          onMouseEnter={() => handleMouseEnter(setIsRegistrationDropdownOpen)}
-          onMouseLeave={() => handleMouseLeave(setIsRegistrationDropdownOpen)}
+          onMouseEnter={() => handleMouseEnter("registration")}
+          onMouseLeave={handleMouseLeave}
         >
           <span className="nav-link">Registration</span>
-          {isRegistrationDropdownOpen && (
+          {hoveredDropdown === "registration" && (
             <div className="dropdown-menu">
               <ul className="dropdown-list">
                 <li>
@@ -55,41 +53,28 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <span
-                    onClick={() => setIsGuidelinesDropdownOpen((prev) => !prev)}
+                  <a
+                    href="https://shorturl.at/dM3W9"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="dropdown-item"
                   >
-                    Guidelines
-                  </span>
-                  {isGuidelinesDropdownOpen && (
-                    <div className="dropdown-menu">
-                      <ul className="dropdown-list">
-                        <li>
-                          <a
-                            href="https://shorturl.at/dM3W9"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="dropdown-item"
-                          >
-                            Guidelines Link
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
+                    Guidelines Link
+                  </a>
                 </li>
               </ul>
             </div>
           )}
         </div>
 
+        {/* Contact Us Dropdown */}
         <div
           className="dropdown-container"
-          onMouseEnter={() => handleMouseEnter(setIsContactDropdownOpen)}
-          onMouseLeave={() => handleMouseLeave(setIsContactDropdownOpen)}
+          onMouseEnter={() => handleMouseEnter("contact")}
+          onMouseLeave={handleMouseLeave}
         >
           <span className="nav-link">Contact Us</span>
-          {isContactDropdownOpen && (
+          {hoveredDropdown === "contact" && (
             <div className="dropdown-menu">
               <ul className="dropdown-list">
                 <li>
@@ -100,20 +85,18 @@ const Navbar = () => {
                     Location
                   </span>
                   {activeInnerDropdown === "location" && (
-                    <div className="dropdown-menu">
-                      <ul className="dropdown-list">
-                        <li>
-                          <a
-                            href="https://www.google.com/maps/place/Vidyalankar+School+of+Information+Technology"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="dropdown-item"
-                          >
-                            VSIT Location (Google Maps)
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+                    <ul className="dropdown-list">
+                      <li>
+                        <a
+                          href="https://www.google.com/maps/place/Vidyalankar+School+of+Information+Technology"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="dropdown-item"
+                        >
+                          VSIT Location (Google Maps)
+                        </a>
+                      </li>
+                    </ul>
                   )}
                 </li>
                 <li>
@@ -124,13 +107,11 @@ const Navbar = () => {
                     Telephone
                   </span>
                   {activeInnerDropdown === "telephone" && (
-                    <div className="dropdown-menu">
-                      <ul className="dropdown-list">
-                        <li>
-                          <span className="dropdown-item">+91 2224104244</span>
-                        </li>
-                      </ul>
-                    </div>
+                    <ul className="dropdown-list">
+                      <li>
+                        <span className="dropdown-item">+91 2224104244</span>
+                      </li>
+                    </ul>
                   )}
                 </li>
                 <li>
@@ -141,13 +122,11 @@ const Navbar = () => {
                     Email
                   </span>
                   {activeInnerDropdown === "email" && (
-                    <div className="dropdown-menu">
-                      <ul className="dropdown-list">
-                        <li>
-                          <span className="dropdown-item">VCMT2024@gmail.com</span>
-                        </li>
-                      </ul>
-                    </div>
+                    <ul className="dropdown-list">
+                      <li>
+                        <span className="dropdown-item">VCMT2024@gmail.com</span>
+                      </li>
+                    </ul>
                   )}
                 </li>
               </ul>
@@ -159,17 +138,21 @@ const Navbar = () => {
       </div>
 
       <div className="logo-container">
-        <img
-          src="img/VSIT logo 2024 transparent background.png"
-          alt="VSIT logo"
-          className="logo"
-        />
-        <img 
-          src="img/VCMT_logo.png" 
-          alt="VCMT logo" 
-          className="vcmt-logo" 
-        />
-      </div>
+  <a href="https://vsit.edu.in/#" target="_blank" rel="noopener noreferrer">
+    <img
+      src="img/VSIT logo 2024 transparent background.png"
+      alt="VSIT logo"
+      className="logo"
+    />
+  </a>
+  <img
+    src="img/VCMT_logo.png"
+    alt="VCMT logo"
+    className="vcmt-logo"
+  />
+</div>
+
+      
     </nav>
   );
 };
