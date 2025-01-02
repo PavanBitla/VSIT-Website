@@ -5,6 +5,7 @@ const PDFViewer = () => {
   const [iframeHeight, setIframeHeight] = useState('100%');
 
   const pdfFiles = [
+    { name: "VCMT Brochure 2024", path: "src/pages/DOWNLOADS/VCMT_2024_Brochure 4pgs.pdf" },
     { name: "February 2020", path: "src/pages/DOWNLOADS/February2020.pdf" },
     { name: "Non-UGC IJRMSS Volume 7 Issue 1 (II) January - March 2019", path: "src/pages/DOWNLOADS/Non-UGC IJRMSS Volume 7 Issue 1 (II) January - March 2019.pdf" },
     { name: "Pradnyaa 2021 First Issue", path: "src/pages/DOWNLOADS/pradnyaa2021-First issue.pdf" },
@@ -15,7 +16,6 @@ const PDFViewer = () => {
     { name: "VCMT ISBN Dec 2021 Final", path: "src/pages/DOWNLOADS/VCMT ISBN Dec 2021 Final.pdf" },
     { name: "VCMT Feb 2021 UGC Issue 1", path: "src/pages/DOWNLOADS/VCMT_Feb_2021_UGC_Issue1.pdf" },
     { name: "VCMT Feb 2021 UGC Issue 2", path: "src/pages/DOWNLOADS/VCMT_Feb_2021_UGC_Issue2.pdf" },
-    { name: "VCMT Brochure 2024", path: "src/pages/DOWNLOADS/VCMT_2024_Brochure 4pgs.pdf" },
     { name: "VCMT Feb 2021 UGC Issue 3", path: "src/pages/DOWNLOADS/VCMT_Feb_2021_UGC_Issue3.pdf" }
   ];
 
