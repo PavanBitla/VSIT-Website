@@ -20,13 +20,14 @@ const AboutConference = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-tl from-indigo-100 via-white to-indigo-50 max-w-6xl mx-auto px-8 py-16">
-      <h1 className="text-5xl font-extrabold text-center text-indigo-800 mb-12 tracking-wider">
+    <div className="bg-gradient-to-tl from-indigo-100 via-white to-indigo-50 max-w-full min-h-screen mx-auto px-8 py-16">
+      <h1 className="text-5xl font-extrabold text-center text-indigo-800 mb-12 tracking-wider drop-shadow-xl">
         About the Conference
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div className="scroll-fade p-8 rounded-xl bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+        {/* Section 1 */}
+        <div className="scroll-fade p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
           <p className="text-indigo-800 leading-relaxed mb-4">
             Vidyalankar School of Information Technology (VSIT), Mumbai, which has been at the forefront 
             of research since 2014, is organizing its 11th conference this academic year, 2024-25. The 
@@ -41,7 +42,8 @@ const AboutConference = () => {
           </p>
         </div>
 
-        <div className="scroll-fade p-8 rounded-xl bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+        {/* Section 2 */}
+        <div className="scroll-fade p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
           <p className="text-indigo-800 leading-relaxed mb-4">
             The primary objective of the conference is to foster conversations on innovative, eco-friendly 
             solutions that address environmental challenges and promote sustainable development. It will 
@@ -55,7 +57,8 @@ const AboutConference = () => {
           </p>
         </div>
 
-        <div className="scroll-fade p-8 rounded-xl bg-indigo-50 shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+        {/* Pre-conference Workshop */}
+        <div className="scroll-fade p-8 rounded-2xl bg-indigo-50 shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
           <h2 className="text-3xl font-semibold text-indigo-700 mb-6">Pre-conference Workshop</h2>
           <p className="text-indigo-800 leading-relaxed mb-4">
             The conference will feature a pre-conference workshop on Basic Econometrics and Its Application 
@@ -70,7 +73,8 @@ const AboutConference = () => {
           </p>
         </div>
 
-        <div className="scroll-fade p-8 rounded-xl bg-indigo-50 shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+        {/* Panel Discussion Themes */}
+        <div className="scroll-fade p-8 rounded-2xl bg-indigo-50 shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
           <h2 className="text-3xl font-semibold text-indigo-700 mb-6">Panel Discussion Themes</h2>
           <ul className="space-y-6 text-indigo-800">
             <li className="flex items-start">
@@ -92,7 +96,8 @@ const AboutConference = () => {
           </ul>
         </div>
 
-        <div className="scroll-fade p-8 rounded-xl bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+        {/* Sustainability and Innovation in the Future */}
+        <div className="scroll-fade p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
           <h2 className="text-3xl font-semibold text-indigo-700 mb-6">Sustainability and Innovation in the Future</h2>
           <p className="text-indigo-800 leading-relaxed mb-4">
             The conference will also explore how sustainability intersects with technological innovation. 
@@ -112,3 +117,4 @@ const AboutConference = () => {
 };
 
 export default AboutConference;
+ 

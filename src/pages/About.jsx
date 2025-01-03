@@ -22,14 +22,14 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-tl from-indigo-100 via-white to-indigo-50 max-w-6xl mx-auto px-8 py-16">
-      <h1 className="text-5xl font-extrabold text-center text-indigo-800 mb-12 tracking-wider">
+    <div className="bg-gradient-to-tl from-indigo-100 via-purple-200 to-indigo-50 max-w-full min-h-screen mx-auto px-8 py-16">
+      <h1 className="text-5xl font-extrabold text-center text-indigo-800 mb-12 tracking-wider drop-shadow-xl">
         About Us
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Section */}
-        <div className="scroll-fade p-8 rounded-xl bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+        <div className="scroll-fade p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
           <h2 className="text-3xl font-semibold text-indigo-700 mb-6">Our Legacy</h2>
           <p className="text-indigo-800 leading-relaxed mb-4">
             Established in 2002, Vidyalankar School of Information Technology (VSIT) began with a modest intake 
@@ -44,7 +44,7 @@ const About = () => {
         </div>
 
         {/* Right Section */}
-        <div className="scroll-fade p-8 rounded-xl bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+        <div className="scroll-fade p-8 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
           <h2 className="text-3xl font-semibold text-indigo-700 mb-6">Vision & Mission</h2>
           <p className="text-indigo-800 leading-relaxed mb-4">
             Our vision is to be a globally recognized center for quality education, fostering innovation and 
@@ -61,7 +61,7 @@ const About = () => {
       </div>
 
       {/* Additional Content */}
-      <div className="scroll-fade p-8 mt-16 rounded-xl bg-indigo-50 shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+      <div className="scroll-fade p-8 mt-16 rounded-2xl bg-indigo-50 shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
         <h2 className="text-3xl font-bold text-indigo-900 mb-6">Modern Facilities & Activities</h2>
         <p className="text-indigo-800 leading-relaxed mb-4">
           VSIT boasts a state-of-the-art infrastructure, including high-speed fiber-optic Wi-Fi, centralized 
@@ -75,7 +75,7 @@ const About = () => {
       </div>
 
       {/* Leadership Section */}
-      <div className="scroll-fade p-8 mt-16 rounded-xl bg-indigo-800 text-white shadow-xl hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105">
+      <div className="scroll-fade p-8 mt-16 rounded-2xl bg-indigo-800 text-white shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
         <h2 className="text-3xl font-bold mb-6">Leadership</h2>
         <p className="leading-relaxed">
           Under the guidance of Dr. Rohini Kelkar, the principal of VSIT, the institution focuses on integrating 

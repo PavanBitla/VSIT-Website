@@ -1,30 +1,76 @@
-/* Navbar styles */
+/* Logo Section */
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logos on left and right */
+  background: rgb(255, 255, 255); /* White background */
+  padding: 10px 20px;             /* Padding for spacing */
+  border-radius: 8px;             /* Rounded corners for a modern look */
+}
+
+.vsit-logo {
+  height: 80px;                  /* Adjust logo size */
+  margin-left: 100px;            /* Space between logo and edge */
+}
+
+.vcmt-logo {
+  height: 100px;                 /* Adjust logo size */
+  margin-right: 100px;           /* Space between logo and edge */
+}
+
+.center-text {
+  text-align: center;
+  flex: 1;                       /* Ensures the center text stays in the middle */
+}
+
+.school-name {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.school-tagline {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Navbar */
 .navbar {
   width: 100%;
-  height: 6rem;
-  padding: 16px 28px;
+  background: linear-gradient(135deg, #1665c5, #111112); /* Smooth gradient */
+  color: #ffffff;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  justify-content: center;       /* Center align links */
   position: sticky;
   top: 0;
   z-index: 50;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  backdrop-filter: blur(8px);    /* Transparent background effect */
+  padding: 12px 0;              /* Consistent vertical padding */
 }
 
 .navbar-links {
-  display: flex;
-  gap: 20px;
+  display:inline-flex;
+  gap: 20px;                     /* Space between links */
+  padding: 0 20px;
 }
 
 .nav-link {
-  color: #333;
+  color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.nav-link:hover {
+  color: #ffcc00;                /* Bright yellow hover effect */
+  transform: translateY(-3px);   /* Subtle hover animation */
+}
+
+/* Dropdown Menu */
 .dropdown-container {
   position: relative;
 }
@@ -33,43 +79,49 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.9); /* Darkened background for visibility */
+  border-radius: 12px;           /* Rounded corners for modern look */
   z-index: 10;
-  margin-top: 8px;
+  display: flex;
+  flex-direction: column;        /* Align items vertically */
+  padding: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Depth with shadow */
+  backdrop-filter: blur(15px);   /* Enhanced blur effect */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);   /* Slide down on show */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);      /* Reset position */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
 }
 
 .dropdown-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: column;        /* Align items vertically */
+  gap: 20px;                     /* Space between items */
 }
 
 .dropdown-item {
-  display: block;
-  padding: 8px 16px;
-  color: #555;
+  color: #ffffff;
   text-decoration: none;
-  cursor: pointer;
+  padding: 12px 18px;            /* Padding inside dropdown items */
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  text-align: center;            /* Center align text */
+  white-space: nowrap;           /* Prevent text wrapping */
+  border-radius: 8px;            /* Rounded corners */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
 }
 
-.logo-container {
-  display: flex;
-  gap: 20px;
+.dropdown-item:hover {
+  color: #ffcc00;                /* Bright yellow text on hover */
+  transform: translateX(5px);    /* Slight slide effect */
+  background-color: rgba(255, 204, 0, 0.2); /* Light yellow hover effect */
 }
 
-.logo {
-  width: 270px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  transform: translate(-100px, 70px);
-}
-
-.vcmt-logo {
-  width: 215px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-}
