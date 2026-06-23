@@ -1,8 +1,8 @@
 /* About page styles */
 .about-container {
   background-image: linear-gradient(135deg, #f6f9fc 0%, #edf2f7 100%);
-  max-width: 72rem;
-  margin: 0 auto;
+  max-width: 100%;
+  height: 100vh;  /* Make sure the container takes up full viewport height */
   padding: 2rem;
 }
 

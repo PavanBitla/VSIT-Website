@@ -18,9 +18,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/about-conference" element={<AboutConference />} />
-            <Route path="/call-for-papers" element={<CallForPapers/>} />
+            <Route path="/call-for-papers" element={<CallForPapers />} />
             <Route path="/registration" element={<div className="p-16 text-center">Registration Page (Coming Soon)</div>} />
-            <Route path="/downloads" element={<Downloads2/>} />
+            <Route path="/downloads" element={<Downloads2 />} />
             <Route path="/contact" element={<div className="p-16 text-center">Contact Page (Coming Soon)</div>} />
           </Routes>
         </main>
